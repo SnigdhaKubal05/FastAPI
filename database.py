@@ -2,6 +2,6 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
 
-db_url = "postgresql://postgres:snigdhaSQL@localhost:5432/snigdhaa.db"  
+db_url = "postgresql+psycopg2://postgres:snigdhaaSQL@localhost:2905/snigdhaa"
 engine = create_engine(db_url)
 session=sessionmaker(autocommit=False, autoflush=False, bind=engine)
