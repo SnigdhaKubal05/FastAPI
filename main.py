@@ -19,6 +19,15 @@ Products=[
 
 ]
 
+def init_db():
+    db=session()
+
+    for product in Products:
+        db.add(database_models.Product(**product.model_dump()))   #add product to database
+    db.commit()
+
+init_db()   #call init_db function to add products to database
+
 @app.get("/products")
 def get_products():
     db=session()        #db connection
